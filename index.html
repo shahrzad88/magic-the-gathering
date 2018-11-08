@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <title>MTG Database</title>
 </head>
 <body>
-    
+    <div class="jumbotron jumbotron-fluid jtstyles">
+        <div class="container">
+            <h1 class="display-4">Magic The Gathering Market</h1>
+            <p class="lead">A place to find all your MTG needs!</p>
+        </div>
+    </div>
+
+    <div class="optionColors">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <label for="color">Color:</label>
+                    <select id="color">
+                        <option>Blue</option>
+                        <option>Red</option>
+                        <option>Green</option>
+                        <option>Blue</option>
+                        <option>White</option>
+                    </select>
+                </div>
+        
+                <div class="col-3">
+                    <label for="type">Type:</label>
+                    <select id="type">
+                        <option>Creature</option>
+                        <option>Artifact</option>
+                        <option>Spell</option>
+                        <option>Instant</option>
+                        <option>Plansewalker</option>
+                        <option>Enchantment</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
 </html>
