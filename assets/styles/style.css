@@ -2,17 +2,18 @@ body {
     background: #222629;
     font-family: 'Arvo', serif; 
 }
+
 .jtstyles {
     background: #222629;
     text-align: center;
     color: white;
 }
 
-.jtstyles p {
-    
-}
-
 .optionColors {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: white;
     background: #474B4F;
 }
