@@ -21,3 +21,19 @@ body {
 .optionStyles {
     padding-top: 5px;
 }
+
+p {
+    color: white;
+}
+
+.newcard {
+    float: left;
+    padding: 33px;
+}
+
+img {
+    height: 520px;
+    width: 420px;
+    margin-right: 15px;
+   
+}

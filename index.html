@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/styles/style.css">
     <title>MTG Database</title>
 </head>
@@ -26,11 +27,9 @@
                     <label for="color">Color:</label>
                     <select id="color">
                         <option>---</option>
+                        <option id="white">White</option>
                         <option id="blue">Blue</option>
                         <option id="red">Red</option>
-                        <option id="green">Green</option>
-                        <option id="blue">Blue</option>
-                        <option id="white">White</option>
                     </select>
                 </div>
         
@@ -38,12 +37,19 @@
                     <label for="type">Type:</label>
                     <select id="type">
                         <option>---</option>
-                        <option id="creature">Creature</option>
                         <option id="artifact">Artifact</option>
-                        <option id="spell">Spell</option>
+                        <option id="conspiracy">Conspiracy</option>
+                        <option id="creature">Creature</option>
+                        <option id="enchantment">Enchantment</option>
                         <option id="instant">Instant</option>
+                        <option id="land">Land</option>
+                        <option id="phenomenon">Phenomenon</option>
+                        <option id="plane">Plane</option>
                         <option id="planeswalker">Planeswalker</option>
-                        <option id="enchant">Enchantment</option>
+                        <option id="scheme">Scheme</option>
+                        <option id="sorcery">Sorcery</option>
+                        <option id="tribal">Tribal</option>
+                        <option id="vanguard">Vanguard</option>
                     </select>
                 </div>
 
@@ -67,26 +73,26 @@
                         <option id="thirteen">13</option>
                         <option id="fourteen">14</option>
                         <option id="fifteen">15</option>
+                        <option id="sixteen">16</option>
+                        <option id="seventeen">17</option>
                     </select>
                 </div>
 
                 <div class="col-3">
                     <div class="input-group md-form form-sm form-2 pl-0">
-                        <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
+                        <input id= "input" class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append" type="Submit">
                             <span class="input-group-text lime lighten-2" id="submitSearch"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
                         </div>
                     </div>
                 </div>
             <!--End of options and search bar-->
-
-                <!--Empty Div for displaying cards-->
-                <div class="displayCards">
-                </div>
-
-
             </div>
         </div>
     </div> 
+                    <!--Empty Div for displaying cards-->
+                    <div class="displayCards">
+                    </div>
+    <script src="assets/javascript/app.js"></script>
 </body>
 </html>
