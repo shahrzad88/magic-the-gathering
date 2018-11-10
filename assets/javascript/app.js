@@ -19,7 +19,7 @@
               var cardname = $("<p>").text("Name: " + response.cards[i].name);
               var cardcost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
               var cardtype =$("<p>").text("Type: " + response.cards[i].types);
-              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors[0]);
+              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
                   cardDiv.append(cardImage, cardname, cardcost, cardtype, cardcolor);
@@ -38,13 +38,15 @@
 
     $( document ).ready(function() {
 
-        $(document).on("click", "#submitSearch", function() {
-        
-            var cmc = $("#landCost").val();
-            var types = $("#type").val();
-            var color = $("#color").val();
-            var name = $("#input").val();
+        $("#submitSearch").on("click", function() {
+            $(".displayCards").empty();
 
+        //   alert("working");
+        var cmc = $( "#landCost option:selected" ).text();
+        var types = $( "#type option:selected" ).text();
+        var color = $( "#color option:selected" ).text();
+        var name = $("#searchname").val();
+       
             var MTGapi = "https://api.magicthegathering.io/v1/cards?&" +
             "cmc=" + cmc + "&types=" + types + "&colors=" + color + "&name=" + name;
 
@@ -59,13 +61,14 @@
               var cardname = $("<p>").text("Name: " + response.cards[i].name);
               var cardcost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
               var cardtype =$("<p>").text("Type: " + response.cards[i].types);
-              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors[0]);
+              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
                   cardDiv.append(cardImage, cardname, cardcost, cardtype, cardcolor);
                   cardDiv.addClass("newcard");
               
               $(".displayCards").append(cardDiv);
+              $("#debug").text(MTGapi);
             };
         });
         });
