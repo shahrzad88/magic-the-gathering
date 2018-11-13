@@ -54,9 +54,9 @@ function renderNewCards(cards) {
         var cardType = $("<p>").text("Type: " + cards[i].types);
         var cardColor = $("<p>").text("Color: " + cards[i].colors);
         var ebayPrice = $("<i>").text("");
-        var ebayIcon = $("<i>");
+        var ebayIcon = $("<i>").text("$5");
         ebayIcon.addClass("fab fa-ebay")
-        var amzIcon = $("<i>");
+        var amzIcon = $("<i>").text("$20");
         amzIcon.addClass("fab fa-amazon");
         var amazonPrice = $("<span>").text("");
         //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
