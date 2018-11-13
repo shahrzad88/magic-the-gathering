@@ -20,6 +20,7 @@
               var cardcost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
               var cardtype =$("<p>").text("Type: " + response.cards[i].types);
               var cardcolor =$("<p>").text("Color: " + response.cards[i].colors);
+            //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
                   cardDiv.append(cardImage, cardname, cardcost, cardtype, cardcolor);
@@ -46,9 +47,9 @@
         var types = $( "#type option:selected" ).text();
         var color = $( "#color option:selected" ).text();
         var name = $("#searchname").val();
+        // var releaseDate = $("#releaseYear").val();
        
-            var MTGapi = "https://api.magicthegathering.io/v1/cards?&" +
-            "cmc=" + cmc + "&types=" + types + "&colors=" + color + "&name=" + name;
+            var MTGapi = "https://api.magicthegathering.io/v1/cards?&" + "cmc=" + cmc + "&types=" + types + "&colors=" + color + "&name=" + name;
 
         $.ajax({
           url: MTGapi,
