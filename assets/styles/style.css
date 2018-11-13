@@ -3,6 +3,10 @@ body {
     font-family: 'Arvo', serif; 
 }
 
+h1 {
+    color: #6FB2DB;
+}
+
 .jtstyles {
     background: #222629;
     text-align: center;
