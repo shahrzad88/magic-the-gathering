@@ -22,8 +22,12 @@ body {
     padding-top: 5px;
 }
 
+label {
+    color: #9DB2DB;
+}
+
 p {
-    color: white;
+    color: #9DB2DB;
 }
 
 .newcard {
