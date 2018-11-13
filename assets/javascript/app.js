@@ -65,7 +65,7 @@ function renderNewCards(cards) {
             ebay_link = response.findItemsByKeywordsResponse[0].searchResult[0].item[0].viewItemURL[0];
             ebay_price = response.findItemsByKeywordsResponse[0].searchResult[0].item[0].sellingStatus[0].currentPrice[0].__value__;
         });
-        var ebayIcon = $("<a>").href(ebay_link);
+        var ebayIcon = $("<a>").attr('href', ebay_link);
         ebayIcon.addClass("fab fa-ebay");
         var ebayPrice = $("<p>").text("$"+ ebay_price);
         var amzIcon = $("<i>").text("$20");
