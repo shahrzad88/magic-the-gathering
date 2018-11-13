@@ -5,8 +5,20 @@
     // D. Add class, add responses(img url, type, colour, mana cost) into dynamic divs.
     // E. Append dynamic divs into .displaycards div(every div id that can be divided by 4 will be added a class with clear right).
     // F. Empty .displaycards div later when new cards need to be displayed.
-
+        var userInput = '';
         var MTGapi = "https://api.magicthegathering.io/v1/cards";
+        //ebay api
+        var ebayApi = "http://svcs.ebay.com/services/search/FindingService/v1";
+        ebayApi += "?OPERATION-NAME=findItemsByKeywords";
+        ebayApi += "&SERVICE-VERSION=1.0.0";
+        ebayApi += "&SECURITY-APPNAME=josephch-Project1-PRD-1c2330161-53771d70"; //my api key
+        ebayApi += "&GLOBAL-ID=EBAY-US";
+        ebayApi += "&RESPONSE-DATA-FORMAT=JSON";
+        ebayApi += "&callback=_cb_findItemsByKeywords";
+        ebayApi += "&REST-PAYLOAD";
+        ebayApi += "&paginationInput.entriesPerPage=10"; //list of results displayed etc 10 results in this page
+
+        //
 
         $.ajax({
           url: MTGapi,
@@ -20,6 +32,12 @@
               var cardCost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
               var cardType =$("<p>").text("Type: " + response.cards[i].types);
               var cardColor =$("<p>").text("Color: " + response.cards[i].colors);
+              
+              userInput = response.cards[i].name + '+' + response.cards[i].cmc + '+' + response.cards[i].types + '+' + response.cards[i].colors;
+              ebayApi += "&keywords=" + userInput;
+              
+
+
               var ebayPrice =$("<p>").text("Ebay Price: 1000");
               var amazonPrice =$("<p>").text("Amazon Price: 2000");
             //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
