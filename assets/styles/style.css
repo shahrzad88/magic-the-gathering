@@ -24,6 +24,11 @@ h1 {
 
 .optionStyles {
     padding-top: 5px;
+    margin-left: 15px;
+}
+
+.optionStyles:first-child {
+    margin-left: 0;
 }
 
 p, i, span, label {
@@ -48,4 +53,8 @@ img {
     width: 190px;
     margin-right: 15px;
    
+}
+
+.btnStyles {
+    background-color: #9DB2DB;
 }

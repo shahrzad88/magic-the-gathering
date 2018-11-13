@@ -22,8 +22,8 @@
 <!--Start of options and search bar-->
     <div class="optionColors">
         <div class="container">
-            <div class="row">
-                <div class="col-3 optionStyles">
+            <div class="d-flex">
+                <div class="optionStyles">
                     <label for="color">Color:</label>
                     <select id="color">
                         <option></option>
@@ -35,7 +35,7 @@
                 </div>
 
 
-                <div class="col-3 optionStyles">
+                <div class="optionStyles">
                     <label for="type">Type:</label>
                     <select id="type">
                         <option></option>
@@ -55,7 +55,7 @@
                     </select>
                 </div>
 
-                <div class="col-3 optionStyles">
+                <div class="optionStyles">
                     <label for="landCost">Mana Cost:</label>
                     <select id="landCost">
                         <option></option>
@@ -80,14 +80,11 @@
                     </select>
                 </div>
 
-                <div class="col-3">
-                    <div class="input-group md-form form-sm form-2 pl-0">
-                        <input type="text" placeholder="search name" id="searchname">
-                            <button type="button" class="btn btn-primary" id="submitSearch">Search</button>
-                            <p id="debug"></p>
-                        <div class="input-group-append" type="Submit">
-                        </div>
-                    </div>
+                <div class="ml-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success btnStyles" type="submit">Search</button>
+                    </form>
                 </div>
             <!--End of options and search bar-->
             </div>
