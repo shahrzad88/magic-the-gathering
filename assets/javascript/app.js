@@ -16,14 +16,16 @@
             for (var i = 0; i < response.cards.length; i++) {
            
               var cardDiv = $("<div>");
-              var cardname = $("<p>").text("Name: " + response.cards[i].name);
-              var cardcost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
-              var cardtype =$("<p>").text("Type: " + response.cards[i].types);
-              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors);
+              var cardName = $("<p>").text("Name: " + response.cards[i].name);
+              var cardCost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
+              var cardType =$("<p>").text("Type: " + response.cards[i].types);
+              var cardColor =$("<p>").text("Color: " + response.cards[i].colors);
+              var ebayPrice =$("<p>").text("Ebay Price: 1000");
+              var amazonPrice =$("<p>").text("Amazon Price: 2000");
             //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
-                  cardDiv.append(cardImage, cardname, cardcost, cardtype, cardcolor);
+                  cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor, ebayPrice, amazonPrice);
                   cardDiv.addClass("newcard");
               
               $(".displayCards").append(cardDiv);
@@ -59,13 +61,13 @@
             for (var i = 0; i < response.cards.length; i++) {
            
               var cardDiv = $("<div>");
-              var cardname = $("<p>").text("Name: " + response.cards[i].name);
-              var cardcost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
-              var cardtype =$("<p>").text("Type: " + response.cards[i].types);
-              var cardcolor =$("<p>").text("Color: " + response.cards[i].colors);
+              var cardName = $("<p>").text("Name: " + response.cards[i].name);
+              var cardCost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
+              var cardType =$("<p>").text("Type: " + response.cards[i].types);
+              var cardColor =$("<p>").text("Color: " + response.cards[i].colors);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
-                  cardDiv.append(cardImage, cardname, cardcost, cardtype, cardcolor);
+                  cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor);
                   cardDiv.addClass("newcard");
               
               $(".displayCards").append(cardDiv);
