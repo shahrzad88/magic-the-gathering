@@ -20,12 +20,12 @@
               var cardCost =$("<p>").text("Mana Cost: " + response.cards[i].cmc);
               var cardType =$("<p>").text("Type: " + response.cards[i].types);
               var cardColor =$("<p>").text("Color: " + response.cards[i].colors);
-              var ebayPrice =$("<p>").text("Ebay Price: 1000");
-              var amazonPrice =$("<p>").text("Amazon Price: 2000");
+              var amzIcon = $("<i>");
+              amzIcon.addClass('fab fa-amazon');
             //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
               var cardImage = $("<img>").attr("src",response.cards[i].imageUrl); 
 
-                  cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor, ebayPrice, amazonPrice);
+                  cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor, ebayPrice, amzIcon);
                   cardDiv.addClass("newcard");
               
               $(".displayCards").append(cardDiv);

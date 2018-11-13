@@ -26,11 +26,7 @@ h1 {
     padding-top: 5px;
 }
 
-label {
-    color: #9DB2DB;
-}
-
-p {
+p, i, span, label {
     color: #9DB2DB;
 }
 
