@@ -10,7 +10,7 @@
 //    divided by 4 will be added a class with clear right).
 // F. Empty .displaycards div later when new cards need to be displayed.
 var mtg_base_url = "https://api.magicthegathering.io/v1/cards";
-
+var scryfall_base_api = "https://api.scryfall.com/cards/search";
 // 2. Based on user input from dropdown menus, includes type, colours,
 //    mana cost, and names.
 // A. Create user input variables, based on search criteria.
@@ -46,26 +46,33 @@ $(document).ready(function () {
 
 function renderNewCards(cards) {
     for (var i = 0; i < cards.length; i++) {
-        var cardDiv = $("<div>");
-        var cardName = $("<p>").text("Name: " + cards[i].name);
-        var cardCost = $("<p>").text("Mana Cost: " + cards[i].cmc);
-        var cardType = $("<p>").text("Type: " + cards[i].types);
-        var cardColor = $("<p>").text("Color: " + cards[i].colors);
-        var ebay_link = '';
-        var ebay_price = '20';
-        var ebayIcon = $("<a>").attr('href', ebay_link);
-        ebayIcon.addClass("fab fa-ebay");
-        var ebayPrice = $("<p>").text("$"+ ebay_price);
-        var amzIcon = $("<i>").text("$20");
-        amzIcon.addClass("fab fa-amazon");
-        var amazonPrice = $("<span>").text("");
-        //var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
-        var cardImage = $("<img>").attr("src", cards[i].imageUrl);
-        cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor,
-          ebayIcon, ebayPrice, amzIcon, amazonPrice);
-        cardDiv.addClass("newcard");
-        $(".displayCards").append(cardDiv);
-        $("#debug").text(mtg_base_url);
+        let card = cards[i];
+        if(!card.imageUrl) {
+            continue;
+        }
+        var scryfall_url = scryfall_base_api + "?&q=!\"" + card.name + "\"";
+        $.ajax({
+            url: scryfall_url,
+            method: "GET"
+        }).then(function (response) {
+            var cardDiv = $("<div>");
+            var cardName = $("<p>").text("Name: " + card.name);
+            var cardCost = $("<p>").text("Mana Cost: " + card.cmc);
+            var cardType = $("<p>").text("Type: " + card.types);
+            var cardColor = $("<p>").text("Color: " + card.colors);
+            var ebay_link = response.data[0].purchase_uris.ebay;
+            var ebayIcon = $("<a>").attr('href', ebay_link);
+            ebayIcon.addClass("fab fa-ebay");
+            var cardImage = $("<img>").attr("src", card.imageUrl);
+            var amz_link = response.data[0].purchase_uris.amazon;
+            var amzIcon = $("<a>").attr('href', amz_link);
+            amzIcon.addClass("fab fa-amazon");
+            cardDiv.append(cardImage, cardName, cardCost, cardType, cardColor,
+              ebayIcon, $("<br>"), amzIcon);
+            cardDiv.addClass("newcard");
+            $(".displayCards").append(cardDiv);
+            $("#debug").text(mtg_base_url);
+        });
     };
 }
 
