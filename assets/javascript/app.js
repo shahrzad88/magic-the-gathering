@@ -10,17 +10,7 @@
 //    divided by 4 will be added a class with clear right).
 // F. Empty .displaycards div later when new cards need to be displayed.
 var mtg_base_url = "https://api.magicthegathering.io/v1/cards";
-var ebay_base_url = "http://svcs.ebay.com/services/search/FindingService/v1";
-ebay_base_url += "?OPERATION-NAME=findItemsByKeywords";
-ebay_base_url += "&SERVICE-NAME=FindingService";
-ebay_base_url += "&SERVICE-VERSION=1.0.0";
-//Ebay Api Key
-ebay_base_url += "&SECURITY-APPNAME=josephch-Project1-PRD-1c2330161-53771d70";
-ebay_base_url += "&GLOBAL-ID=EBAY-US";
-ebay_base_url += "&RESPONSE-DATA-FORMAT=JSON";
-ebay_base_url += "&callback=_cb_findItemsByKeywords";
-ebay_base_url += "&REST-PAYLOAD";
-ebay_base_url += "&paginationInput.entriesPerPage=10";
+
 // 2. Based on user input from dropdown menus, includes type, colours,
 //    mana cost, and names.
 // A. Create user input variables, based on search criteria.
@@ -35,6 +25,7 @@ $(document).ready(function () {
         renderNewCards(response.cards);
     });
     $("#submitSearch").on("click", function () {
+        console.log("hello");
         $(".displayCards").empty();
         var name = $("#searchname").val();
         var color = $("#color option:selected").text();
@@ -42,6 +33,7 @@ $(document).ready(function () {
         var cmc = $("#landCost option:selected").text();
         var mtg_url = mtg_base_url + "?&cmc=" + cmc + "&types=" + types +
           "&colors=" + color + "&name=" + name;
+        console.log(mtg_url);
         $.ajax({
             url: mtg_url,
             method: "GET"
@@ -59,18 +51,8 @@ function renderNewCards(cards) {
         var cardCost = $("<p>").text("Mana Cost: " + cards[i].cmc);
         var cardType = $("<p>").text("Type: " + cards[i].types);
         var cardColor = $("<p>").text("Color: " + cards[i].colors);
-        var ebay_url= ebay_base_url + "&keywords=" + cards[i].name + '+' +
-          cards[i].cmc + '+' + cards[i].types + '+' + cards[i].colors;
         var ebay_link = '';
-        var ebay_price = '';
-        $.ajax({
-            url: ebay_url,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-            ebay_link = response.findItemsByKeywordsResponse[0].searchResult[0].item[0].viewItemURL[0];
-            ebay_price = response.findItemsByKeywordsResponse[0].searchResult[0].item[0].sellingStatus[0].currentPrice[0].__value__;
-        });
+        var ebay_price = '20';
         var ebayIcon = $("<a>").attr('href', ebay_link);
         ebayIcon.addClass("fab fa-ebay");
         var ebayPrice = $("<p>").text("$"+ ebay_price);
