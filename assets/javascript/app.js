@@ -67,8 +67,8 @@ function renderNewCards(cards) {
         });
         var ebayIcon = $("<a>").attr('href', ebay_link);
         ebayIcon.addClass("fab fa-ebay");
-        var ebayPrice = $("<p>").text("$"+ ebay_price);
-        var amzIcon = $("<i>").text("$20");
+        var ebayPrice = $("<p>").text(ebay_price);
+        var amzIcon = $("<i>");
         amzIcon.addClass("fab fa-amazon");
         var amazonPrice = $("<span>").text("");
         //   var releaseDate = $("<p>").text("Release Year: " + response.cards[i].releaseDate);
