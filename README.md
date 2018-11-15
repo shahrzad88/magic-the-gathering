@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+## Magic The Gathering Marketplace
 
-You can use the [editor on GitHub](https://github.com/shahrzad88/magic-the-gathering/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Team Members: Sherri, Bayli, Joseph, Ifeanyi
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+API’s we are going to use: https://magicthegathering.io/ and https://scryfall.com/ API'S
 
-### Markdown
+Our database is a quick lookup for the type, cost, colour, and the card market price from the api’s we listed above. We will have 3 buttons and a search bar for the card you want to view. Our site will be responsive on phones, and tablets. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We will have sort functions, search option. When we click on the header all the options will reset. Hyper links to all the sellers, to eBay, amazon, and card kingdoms.
 
-```markdown
-Syntax highlighted code block
+We also have a some mobile responsive 
 
-# Header 1
-## Header 2
-### Header 3
+### How the Application works
 
-- Bulleted
-- List
+We use the magicthegathering.io api for displaying cards and we use the scryfall.com api to display the ebay and amazon page links. When you get to the website you will have a search menu with filters such as: Color, Type, Mana Cost, and Name of the card. When you have the search critera you need you can press search and it will give you all the cards you are looking for with those filters that match your critera. If no cards are found the result section will be empty. 
 
-1. Numbered
-2. List
+By default you will see the 100 cards of any color, type and cost from magicthegathering.io. If there is no image for the card we do not show the card on the website.
 
-**Bold** and _Italic_ and `Code` text
+You are also givin a option to click on the amazon and ebay icons to buy the card if you choose so.
 
-[Link](url) and ![Image](src)
-```
+## You can visit our page at:
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+https://shahrzad88.github.io/magic-the-gathering/
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shahrzad88/magic-the-gathering/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
