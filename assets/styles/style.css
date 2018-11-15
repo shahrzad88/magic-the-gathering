@@ -37,7 +37,17 @@ p, i, span, label {
 
 .fab {
     padding-right: 20px;
+    font-size: 30px;
+    color: #9DB2DB;
 }
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: pink;
+}  
 
 i {
     font-size: 30px;
