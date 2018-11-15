@@ -18,7 +18,7 @@ By default you will see the 100 cards of any color, type and cost from magictheg
 
 You are also givin a option to click on the amazon and ebay icons to buy the card if you choose so.
 
-## You can visit our page at:
+## You can visit our app at:
 
 https://shahrzad88.github.io/magic-the-gathering/
 
